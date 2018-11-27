@@ -1,0 +1,19 @@
+Three parts:
+1) Google vision (involving the camera)
+2) Distance (involving the sonic)
+3) Color detection (involving the camera)
+
+Setup:
+* Initialize the Google client
+* Setup the sound process
+* Setup GPIO, pins
+* Setup the camera: resolution
+* Create the image array
+
+The main loop:
+* Calculate distance -> change sound volume
+* Capture an image -> Calculate color -> new sound process with new frequency
+* Every 30 cycles: Capture an image -> process and output the object
+* Go to sleep for 100 ms
+
+On exit/interrupted: kill the sound process, release the camera, clean up GPIO
